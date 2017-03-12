@@ -1,0 +1,29 @@
+<script>
+    //<img src="http://placehold.it/350x150">
+    var i = 0;
+    var images = [];
+    var time = 3000;
+
+    // Image List
+    images[0] = "http://lorempixel.com/400/200/animals";
+    images[1] = "http://lorempixel.com/400/200/sports";
+    images[2] = "http://lorempixel.com/400/200/food";
+    images[3] = "http://lorempixel.com/400/200/people";
+
+    // Change Image
+    function changeImg() {
+        document.slide.src = images[i];
+
+        if (i < images.length) {
+            i++;
+        } else {
+            i = 0;
+        }
+
+        setTimeout("changeImg()", time);
+    }
+
+    window.onload = changeImg;
+</script>
+
+<img name="slide" width="400" height="200">
